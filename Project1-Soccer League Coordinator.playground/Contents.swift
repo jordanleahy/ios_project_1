@@ -140,13 +140,25 @@ var teamDragons: [String] = []
 var teamRaptors: [String] = []
 
 // Create experienced and inExerienced players empty collections
-var experiencedPlayers: [String]  = []
-var InExperiencedPlayers: [String]  = []
+var experiencedPlayers: [[String: Any]]  = []
+var inExperiencedPlayers: [[String: Any]]  = []
 
 print(players.count)
 
+// Divide experienced and inexperienced players and assign them to empty appropriate variable
+for player in players {
+    
+    // typecasted "hasExperience" value to a Bool
+    if let hasExperience = player["hasExperience"] as? Bool {
+        if hasExperience == true {
+            experiencedPlayers.append(player)
+        } else {
+            inExperiencedPlayers.append(player)
+        }
+    }
+}
 
-
+print(experiencedPlayers)
 
 
 
