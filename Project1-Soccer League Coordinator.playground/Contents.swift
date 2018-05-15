@@ -143,7 +143,7 @@ var teamRaptors: [[String: Any]]  = []
 var experiencedPlayers: [[String: Any]]  = []
 var inExperiencedPlayers: [[String: Any]]  = []
 
-print(players.count)
+print(experiencedPlayers)
 
 // Divide experienced and inexperienced players and assign them to empty appropriate variable
 for player in players {
@@ -166,21 +166,33 @@ var totalExperiencedPlayers = (experiencedPlayers.count)
 var totalInExperiencedPlayers = (inExperiencedPlayers.count)
 
 var maxExperiencedPlayersPerTeam = (totalExperiencedPlayers / totalTeams)
-var maxinExperiencedPlayersPerTeam = (totalInExperiencedPlayers / totalTeams)
+var maxInExperiencedPlayersPerTeam = (totalInExperiencedPlayers / totalTeams)
+
 
 
 // Run For loop in experiencedTeams to populate evenly individual teams
 for experiencedPlayer in experiencedPlayers {
-    if experiencedPlayer < maxExperiencedPlayersPerTeam {
+    if teamSharks.count < maxExperiencedPlayersPerTeam {
         teamSharks.append(experiencedPlayer)
-    } else if experiencedPlayer < maxExperiencedPlayersPerTeam {
+    } else if teamRaptors.count < maxExperiencedPlayersPerTeam {
         teamRaptors.append(experiencedPlayer)
     } else {
         teamDragons.append(experiencedPlayer)
     }
 }
 
+// Run For loop in experiencedTeams to populate evenly individual teams
+for inExperiencedPlayer in inExperiencedPlayers {
+    if teamSharks.count < maxInExperiencedPlayersPerTeam {
+        teamSharks.append(inExperiencedPlayer)
+    } else if teamRaptors.count < maxInExperiencedPlayersPerTeam {
+        teamRaptors.append(inExperiencedPlayer)
+    } else {
+        teamDragons.append(inExperiencedPlayer)
+    }
+}
 
+print(teamRaptors)
 
 
 
