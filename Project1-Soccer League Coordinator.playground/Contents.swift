@@ -135,9 +135,9 @@ var players: [[String: Any]] = [player1, player2, player3, player4, player5, pla
 
 
 //Create empy collections with variables named 'teamSharks', 'teamDragons', and 'teamRaptors
-var teamSharks: [String] = []
-var teamDragons: [String] = []
-var teamRaptors: [String] = []
+var teamSharks: [[String: Any]]  = []
+var teamDragons: [[String: Any]]  = []
+var teamRaptors: [[String: Any]]  = []
 
 // Create experienced and inExerienced players empty collections
 var experiencedPlayers: [[String: Any]]  = []
@@ -158,9 +158,27 @@ for player in players {
     }
 }
 
-print(experiencedPlayers)
+// Bundle all teams into one variable named teams.
+var teams = [teamSharks, teamDragons, teamRaptors]
+var totalTeams = (teams.count)
+var totalPlayersPerTeam = (players.count / totalTeams)
+var totalExperiencedPlayers = (experiencedPlayers.count)
+var totalInExperiencedPlayers = (inExperiencedPlayers.count)
+
+var maxExperiencedPlayersPerTeam = (totalExperiencedPlayers / totalTeams)
+var maxinExperiencedPlayersPerTeam = (totalInExperiencedPlayers / totalTeams)
 
 
+// Run For loop in experiencedTeams to populate evenly individual teams
+for experiencedPlayer in experiencedPlayers {
+    if experiencedPlayer < maxExperiencedPlayersPerTeam {
+        teamSharks.append(experiencedPlayer)
+    } else if experiencedPlayer < maxExperiencedPlayersPerTeam {
+        teamRaptors.append(experiencedPlayer)
+    } else {
+        teamDragons.append(experiencedPlayer)
+    }
+}
 
 
 
