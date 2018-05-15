@@ -1,10 +1,6 @@
 //// Project 1: Soccer League Coordinator
 // Jordan Leahy 5/15/2018
 
-// A single collection named 'players' that contains all information for all 18 players is created.
-// Notes: [[String:Any]] indicates that this an array of dictionaries.
-var players: [[String: Any]] = [player1, player2, player3, player4, player5, player6, player7, player8, player9, player10, player11, player12, player13, player14, player15, player16, player17, player18]
-
 //Each player is represented by a Dictionary with String keys and the corresponding values
 
 let player1: [String: Any] = [
@@ -132,13 +128,22 @@ let player18: [String: Any] = [
     "guardians": "Hyman and Rachel Krustofski"
 ]
 
+// A single collection named 'players' that contains all information for all 18 players is created.
+// Notes: [[String:Any]] indicates that this an array of dictionaries.
+var players: [[String: Any]] = [player1, player2, player3, player4, player5, player6, player7, player8, player9, player10, player11, player12, player13, player14, player15, player16, player17, player18]
 
 
 
+//Create empy collections with variables named 'teamSharks', 'teamDragons', and 'teamRaptors
+var teamSharks: [String] = []
+var teamDragons: [String] = []
+var teamRaptors: [String] = []
 
+// Create experienced and inExerienced players empty collections
+var experiencedPlayers: [String]  = []
+var InExperiencedPlayers: [String]  = []
 
-
-
+print(players.count)
 
 
 
