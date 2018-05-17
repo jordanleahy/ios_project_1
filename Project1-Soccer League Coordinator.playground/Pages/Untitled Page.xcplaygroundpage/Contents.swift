@@ -128,6 +128,8 @@ let player18: [String: Any] = [
     "guardians": "Hyman and Rachel Krustofski"
 ]
 
+
+
 // A single collection named 'players' that contains all information for all 18 players is created.
 // Notes: [[String:Any]] indicates that this an array of dictionaries.
 var players: [[String: Any]] = [player1, player2, player3, player4, player5, player6, player7, player8, player9, player10, player11, player12, player13, player14, player15, player16, player17, player18]
@@ -155,8 +157,8 @@ for player in players {
     }
 }
 
-
 // Bundle all teams into one variable named teams.
+var totalPlayers = players.count
 var teams = [teamSharks, teamDragons, teamRaptors]
 var totalTeams = (teams.count)
 var totalPlayersPerTeam = (players.count / totalTeams)
@@ -180,9 +182,9 @@ for experiencedPlayer in experiencedPlayers {
 
 // Run For loop in experiencedTeams to populate evenly individual teams
 for inExperiencedPlayer in inExperiencedPlayers {
-    if teamSharks.count < maxInExperiencedPlayersPerTeam {
+    if teamSharks.count < totalPlayersPerTeam {
         teamSharks.append(inExperiencedPlayer)
-    } else if teamRaptors.count < maxInExperiencedPlayersPerTeam {
+    } else if teamRaptors.count < totalPlayersPerTeam {
         teamRaptors.append(inExperiencedPlayer)
     } else {
         teamDragons.append(inExperiencedPlayer)
@@ -192,16 +194,41 @@ for inExperiencedPlayer in inExperiencedPlayers {
 // Write code that iterates through all three teams of players and generates a personalized letter to the guardians, letting them know which team the child has been placed on and when they should attend their first team team practice.
 
 //Create collection of letters
-// var letters [[String:Any]] =
+var letters = [String] ()
 
 // Create vars for each teams practice date
 var dragonsPractice = "March 17, 1pm"
 var sharksPractice = "March 17, 3pm"
 var raptorsPractice = "March 18, 1pm"
 
+print(teamSharks.count)
+print(teamDragons.count)
 
+for player in teamSharks {
+    // when accessing an dictionary in an array, in order to copy it's key values, we need to create const for each key/value we want to pull.  Then use that const in the return
+    if  let guardian = player["guardians"], let name = player["name"] {
+        let letter: String = "Dear \(guardian), \(name) is on team Sharks and there first game is on \(sharksPractice)."
+        letters.append(letter)
+    }
+}
 
+for player in teamDragons {
+    // when accessing an dictionary in an array, in order to copy it's key values, we need to create const for each key/value we want to pull.  Then use that const in the return
+    if let guardian = player["guardians"], let name = player["name"] {
+        let letter: String = "Dear \(guardian), \(name) is on team Sharks and there first game is on \(dragonsPractice)."
+        letters.append(letter)
+    }
+}
 
+for player in teamRaptors {
+    // when accessing an dictionary in an array, in order to copy it's key values, we need to create const for each key/value we want to pull.  Then use that const in the return
+    if let guardian = player["guardians"], let name = player["name"] {
+        let letter: String = "Dear \(guardian), \(name) is on team Sharks and there first game is on \(raptorsPractice)."
+        letters.append(letter)
+    }
+}
+
+print(letters)
 
 
 
