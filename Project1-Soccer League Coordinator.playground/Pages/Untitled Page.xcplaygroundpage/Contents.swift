@@ -133,21 +133,18 @@ let player18: [String: Any] = [
 var players: [[String: Any]] = [player1, player2, player3, player4, player5, player6, player7, player8, player9, player10, player11, player12, player13, player14, player15, player16, player17, player18]
 
 
-
-//Create empy collections with variables named 'teamSharks', 'teamDragons', and 'teamRaptors
+//Create collections with variables named 'teamSharks', 'teamDragons', and 'teamRaptors
 var teamSharks: [[String: Any]]  = []
 var teamDragons: [[String: Any]]  = []
 var teamRaptors: [[String: Any]]  = []
+
 
 // Create experienced and inExerienced players empty collections
 var experiencedPlayers: [[String: Any]]  = []
 var inExperiencedPlayers: [[String: Any]]  = []
 
-print(experiencedPlayers)
-
 // Divide experienced and inexperienced players and assign them to empty appropriate variable
 for player in players {
-    
     // typecasted "hasExperience" value to a Bool
     if let hasExperience = player["hasExperience"] as? Bool {
         if hasExperience == true {
@@ -158,6 +155,7 @@ for player in players {
     }
 }
 
+
 // Bundle all teams into one variable named teams.
 var teams = [teamSharks, teamDragons, teamRaptors]
 var totalTeams = (teams.count)
@@ -167,7 +165,6 @@ var totalInExperiencedPlayers = (inExperiencedPlayers.count)
 
 var maxExperiencedPlayersPerTeam = (totalExperiencedPlayers / totalTeams)
 var maxInExperiencedPlayersPerTeam = (totalInExperiencedPlayers / totalTeams)
-
 
 
 // Run For loop in experiencedTeams to populate evenly individual teams
@@ -192,7 +189,18 @@ for inExperiencedPlayer in inExperiencedPlayers {
     }
 }
 
-print(teamRaptors)
+// Write code that iterates through all three teams of players and generates a personalized letter to the guardians, letting them know which team the child has been placed on and when they should attend their first team team practice.
+
+//Create collection of letters
+// var letters [[String:Any]] =
+
+// Create vars for each teams practice date
+var dragonsPractice = "March 17, 1pm"
+var sharksPractice = "March 17, 3pm"
+var raptorsPractice = "March 18, 1pm"
+
+
+
 
 
 
