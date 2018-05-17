@@ -169,6 +169,7 @@ var maxExperiencedPlayersPerTeam = (totalExperiencedPlayers / totalTeams)
 var maxInExperiencedPlayersPerTeam = (totalInExperiencedPlayers / totalTeams)
 
 
+
 // Run For loop in experiencedTeams to populate evenly individual teams
 for experiencedPlayer in experiencedPlayers {
     if teamSharks.count < maxExperiencedPlayersPerTeam {
@@ -205,7 +206,7 @@ print(teamSharks.count)
 print(teamDragons.count)
 
 for player in teamSharks {
-    // when accessing an dictionary in an array, in order to copy it's key values, we need to create const for each key/value we want to pull.  Then use that const in the return
+    // when accessing an dictionary in an array, in order to copy it's key/values, we need to create const for each key/value we want to pull and use an if statement to check if that key/value exists.
     if  let guardian = player["guardians"], let name = player["name"] {
         let letter: String = "Dear \(guardian), \(name) is on team Sharks and there first game is on \(sharksPractice)."
         letters.append(letter)
@@ -228,6 +229,12 @@ for player in teamRaptors {
     }
 }
 
+// When looping over an array, you will get a line break.
+for finalLetter in letters {
+    print(finalLetter)
+}
+
+// If you just print the array, you don't get a line break
 print(letters)
 
 
