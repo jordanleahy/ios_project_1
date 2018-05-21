@@ -218,7 +218,7 @@ for player in teamSharks {
 for player in teamDragons {
     // when accessing an dictionary in an array, in order to copy it's key values, we need to create const for each key/value we want to pull.  Then use that const in the return
     if  let guardian = player["guardians"], let name = player["name"] {
-        let letter: String = "Dear \(guardian), \(name) is on team Sharks and there first game is on \(dragonsPractice)."
+        let letter: String = "Dear \(guardian), \(name) is on team Dragons and there first game is on \(dragonsPractice)."
         letters.append(letter)
     }
 }
@@ -227,7 +227,7 @@ for player in teamDragons {
 for player in teamRaptors {
     // when accessing an dictionary in an array, in order to copy it's key values, we need to create const for each key/value we want to pull.  Then use that const in the return
     if let guardian = player["guardians"], let name = player["name"] {
-        let letter: String = "Dear \(guardian), \(name) is on team Sharks and there first game is on \(raptorsPractice)."
+        let letter: String = "Dear \(guardian), \(name) is on team Raptors and there first game is on \(raptorsPractice)."
         letters.append(letter)
     }
 }
