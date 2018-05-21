@@ -134,7 +134,7 @@ let player18: [String: Any] = [
 // Notes: [[String:Any]] indicates that this an array of dictionaries.
 var players: [[String: Any]] = [player1, player2, player3, player4, player5, player6, player7, player8, player9, player10, player11, player12, player13, player14, player15, player16, player17, player18]
 
-
+// Players for each team are stored in collection with variables named 'teamSharks', 'teamDragons', and 'teamRaptors
 //Create collections with variables named 'teamSharks', 'teamDragons', and 'teamRaptors
 var teamSharks: [[String: Any]]  = []
 var teamDragons: [[String: Any]]  = []
@@ -170,8 +170,9 @@ var maxInExperiencedPlayersPerTeam = (totalInExperiencedPlayers / totalTeams)
 
 
 
-// Run For loop in experiencedTeams to populate evenly individual teams
+// Run For loop in experiencedTeams to populate evenly individual teams.
 for experiencedPlayer in experiencedPlayers {
+    // teamSharks starts as an empty array so it's count is 0 and the maxExperiencedPlayersPerTeam is 3
     if teamSharks.count < maxExperiencedPlayersPerTeam {
         teamSharks.append(experiencedPlayer)
     } else if teamRaptors.count < maxExperiencedPlayersPerTeam {
@@ -181,7 +182,8 @@ for experiencedPlayer in experiencedPlayers {
     }
 }
 
-// Run For loop in experiencedTeams to populate evenly individual teams
+// Run For loop in experiencedTeams to populate evenly individual teams.
+// This for loop must got after the experiencedPlayer for loop.  Could be better way to do this.
 for inExperiencedPlayer in inExperiencedPlayers {
     if teamSharks.count < totalPlayersPerTeam {
         teamSharks.append(inExperiencedPlayer)
@@ -215,11 +217,12 @@ for player in teamSharks {
 
 for player in teamDragons {
     // when accessing an dictionary in an array, in order to copy it's key values, we need to create const for each key/value we want to pull.  Then use that const in the return
-    if let guardian = player["guardians"], let name = player["name"] {
+    if  let guardian = player["guardians"], let name = player["name"] {
         let letter: String = "Dear \(guardian), \(name) is on team Sharks and there first game is on \(dragonsPractice)."
         letters.append(letter)
     }
 }
+
 
 for player in teamRaptors {
     // when accessing an dictionary in an array, in order to copy it's key values, we need to create const for each key/value we want to pull.  Then use that const in the return
@@ -233,10 +236,6 @@ for player in teamRaptors {
 for finalLetter in letters {
     print(finalLetter)
 }
-
-// If you just print the array, you don't get a line break
-print(letters)
-
 
 
 
